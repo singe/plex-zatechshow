@@ -51,7 +51,8 @@ Under the same terms as Plex, GPLv2.
 Thanks
 ======
 
-This is my first Plex plugin. Plex documentation is uber-crap, and was more
+Thanks to Simon and the team for a fun show. This is my first Plex plugin. Plex
+documentation is uber-crap, and was more
 painful than it needed to be.
 
 - I cloned this from Ches Martin's `Vimcasts plugin`_.
