@@ -1,0 +1,38 @@
+# Plugin configuration
+#
+# This configuration setup allows for easy, environment-specific configuration.
+# Its settings can be inserted into other files at build-time, or loaded by
+# python code at run-time with PyYAML.
+
+# Default settings. This is never read directly. Instead, it's extended by
+# other sections below.
+default: &default
+  PLUGIN_ID:          com.plexapp.plugins.zatechshow
+  PLUGIN_NAME:        zatechshow
+  PLUGIN_PREFIX:      /video/zatechshow
+  PLUGIN_VERSION:     0.0.1
+  PLUGIN_AUTHOR:      Dominic White <singe-plex@singe.za.net>
+  PLUGIN_DESCRIPTION: The ZA Tech Show is a weekly technology talk show hosted by Simon Dingle that is broadcast live online. In the ZA Tech Show a group of technology journalists and pundits discuss the week’s technology news and review gadgets software and services.
+
+  VERSION_IN_PLUGIN_NAME: false
+
+  CACHE_TTL: 3600
+
+  PLIST_DEBUG: 0
+  PLIST_DEV_MODE: 0
+
+# override some values when building a dev release
+development:
+  <<: *default
+  VERSION_IN_PLUGIN_NAME: true
+
+  # disable caching
+  CACHE_TTL: 0
+
+  # turn on dev mode (no auto-updates), and debug
+  PLIST_DEBUG: 1
+  PLIST_DEV_MODE: 1
+
+# release version inherits defaults
+release:
+  <<: *default
